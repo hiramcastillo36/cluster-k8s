@@ -6,16 +6,14 @@ spec:
   restartPolicy: Never
   containers:
     - name: tensorflow
-      image: tensorflow/tensorflow:latest
+      image: "tensorflow/tensorflow:devel-gpu"
       command: ["python", "-c", "print('Hello, TensorFlow!')"]
       resources:
         limits:
           cpu: 2
           memory: 4G
           nvidia.com/gpu: 1
-        request:
+        requests:
           cpu: 1
           memory: 2G
           nvidia.com/gpu: 1
-    
-    
